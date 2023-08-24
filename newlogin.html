@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Alture Login</title>
+  <link rel="stylesheet" href="userbutton.css" />
+  <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+        <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="loginpagenew.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://codepen.io/P1N2O/pen/xxbjYqx.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1 class="text-light"></h1>
+<div class="container" width="400">
+  <div class="title">Alture Login</div>
+  <form action="#">
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Username</span>
+        <input type="text" placeholder="Ex : John Smith" required>
+      </div>
+      <div class="input__box">
+        <span class="details">Email</span>
+        <input type="email" placeholder="Ex : johnsmith@gmail.com" required>
+      </div>
+      <div class="input__box">
+        <span class="details">Password</span>
+        <input type="password" placeholder="********" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      </div>
+
+    </div>
+    <div class="button">
+      <input type="submit" value="Login" onclick="passwordConfirmation()">
+    </div>
+  </form>
+</div>
+<script>
+function passwordConfirmation() {
+            
+                alert("Login successful.");
+            
+}
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

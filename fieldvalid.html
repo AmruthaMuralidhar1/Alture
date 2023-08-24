@@ -1,0 +1,326 @@
+<html>
+<head>  
+   <meta name="viewport" content="width=device-width, initial-scale=1">  
+   <title>Login Page</title>
+   <link rel="stylesheet" href="./btn3.css">
+   <style>
+   @import url(https://fonts.bunny.net/css?family=montserrat);
+  div[class*=box] {
+  height: 10%;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:15pt;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+    --off-white: #f2f4ef;
+    --white: #fff;
+    --primary-color: #e68c74;
+    --secondary-color: #7a5059;
+    --light-accent-color: #dcb5a0;
+    --dark-accent-color: #ed7b6d;
+    --success-color: #7aa55b;
+    --error-color: #f44336;
+}
+* {
+    box-sizing: box-sizing;
+    margin-top: 20;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image:  url("C:\Users\DE\Downloads\global-master\techpix.jpeg");
+    //background-color:black;
+    //display: grid;
+    font-family: "Montserrat", sans-serif;
+    //min-height: 100vh;
+    place-content: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0 0 2rem;
+    text-align: center;
+}
+
+.container {
+    //background-color: white;
+    width:500;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.form {
+    padding: 3rem 4rem;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.form-control label {
+    color: var(--secondary-color);
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-control input {
+    border: 1px solid var(--light-accent-color);
+    border-radius: 0.4rem;
+    display: block;
+    font-size: 1.4rem;
+    padding: 1rem;
+    width: 100%;
+    transition: border-color 0.5s;
+}
+oh{ 
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
+
+  /* fixes overlap error in IE7/8, 
+     make sure you have an empty gif */
+  background-image: url('empty.gif');
+}   
+
+.form-control input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.form-control.success input {
+    border-color: var(--success-color);
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--white);
+    border-radius: 0.4rem;
+    padding: 1rem 2rem;
+    display: block;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+button{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.check-box{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    right: -40px;
+    opacity: 0;
+}
+
+.check-box svg{
+    width: 40px;
+    margin-left: 20px;
+}
+
+svg path{
+    stroke-width: 3;
+    stroke: #fff;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+#btnText{
+   color: white;
+   font-size:1.2em;
+   font-family: "Montserrat", sans-serif;
+}
+
+.active{
+    background: #ff2b75;
+    transition: 1s;
+}
+
+.active .check-box{
+    right: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+.active p{
+    margin-right: 50px;
+    transition: 1s;
+}
+
+.active svg path{
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
+}
+</style>
+
+</head>
+<body>
+<center>
+   <div class="container">
+    <form action="#" id="form" class="form">
+        <h2>Alture Login</h2>
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Ex : johnwebb785" required>
+            <small>Username must be at least 3 characters and cannot contain white spaces.</small>
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email"  onblur="validateEmail(this);" placeholder="Ex : johnwebb@gmail.com" required>
+            <small>Field cannot be empty.</small>
+        </div>
+        <div class="form-control">
+            <label for="password-confirmation">Password</label>
+            <input type="password" id="password-confirmation" name="password-confirmation" placeholder="**********" required>
+            <small>Field cannot be empty.</small>
+        </div>
+        <div class="form-control">
+        <button id="btn" type="submit" onclick="tryit()">
+            <p id="btnText">Login</p>
+        </button>
+    </div>
+    <script type="text/javascript">
+const form = document.querySelector("#form");
+const username = document.querySelector("#username");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+
+const showError = (input, msg) => {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+    formControl.classList.add("error");
+    small.textContent = msg;
+};
+
+const showSuccess = (input) => {
+    const formControl = input.parentElement;
+    formControl.classList.add("success");
+};
+
+const checkEmail = (input) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(input)) {
+        showSuccess(input);
+    } else {
+        showError(input, "Email address is invalid. ");
+    }
+};
+
+
+
+const getFieldName = (input) => {
+    const firstLetter = input.id.charAt(0).toUpperCase();
+    return firstLetter + input.id.slice(1);
+};
+
+const checkLength = (input, min, max) => {
+    if (input.value.length < min || input.value.length > max) {
+        showError(
+            input,
+            `${getFieldName(
+                input
+            )} must be between ${min} and ${max} characters long`
+        );
+    }
+};
+
+const checkRequired = (inputArr) => {
+    inputArr.forEach((input) => {
+        if (input.value.trim() === "") {
+            showError(input, `${getFieldName(input)} is required`);
+        } else {
+            showSuccess(input);
+        }
+    });
+};
+
+const validateForm = () => {
+    checkRequired([username, email, password, passwordConfirmation]);
+    checkLength(username, 3, 20);
+    checkLength(password, 8, 30);
+    checkEmail(email);
+    checkPasswordMatch(passwordConfirmation, password);
+};
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    validateForm();
+});
+       function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+
+        return true;
+
+}
+       function tryit(){
+       alert("Login Successful!");
+       }
+        
+
+    
+        const btn = document.querySelector("#btn");
+        const btnText = document.querySelector("#btnText");
+
+        
+    </script>
+       
+    </form>
+</div>
+</center>
+</body>
+</html>
